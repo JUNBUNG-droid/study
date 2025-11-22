@@ -2,7 +2,8 @@
 using namespace std;
 
 int main() {
-    char a = 'G';
+    char a;
+    cin >> a
     int i;
     for (i=0; i<8; i++){
         cout << a;
