@@ -6,10 +6,10 @@ int main() {
     int a,b,c;
     cin >> a >> b >> c;
     int low;
-    if (a>b && b>c){
+    if (a>=b && b>=c){
         low = c;
     }
-    else if(b>a && c>a){
+    else if(b>=c && c>=a){
         low = a;
     }
     else{
