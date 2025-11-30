@@ -5,16 +5,13 @@ int main() {
     // Please write your code here.
     int a,b,c;
     cin >> a >> b >> c;
-    int low;
-    if (a>=b && b>=c){
+    int low=a;
+    if (b < low){
+        low=b;
+    } 
+    if (c < low){
         low = c;
-    }
-    else if(b>=c && c>=a){
-        low = a;
-    }
-    else{
-        low = b;
-    }
+    } 
     cout << (a==low) << " ";
     cout << (a==b && b==c);
     return 0;
