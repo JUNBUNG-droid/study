@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Please write your code here.
+    char a;
+    cin >> a;
+    if(a=='S'){
+        cout << "Superior";
+    }
+    else if(a=='A'){
+        cout << "Excellent";
+    }
+    else if(a=='B'){
+        cout << "Good";
+    }
+    else if(a=='C'){
+        cout << "Usually";
+    }
+    else if(a=='E'){
+        cout << "Effor";
+    }
+    else{
+        cout << "Failure";
+    }
+    return 0;
+}
