@@ -7,7 +7,7 @@ int main() {
     while(true){
         int age;
         cin >> age;
-        if(age>=30){
+        if(age>=30&&a<20){
             break;
         }
         sum+=age;
