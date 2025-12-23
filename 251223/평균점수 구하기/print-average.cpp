@@ -8,6 +8,8 @@ int main() {
         cin >> arr[i];
         sum+=arr[i];
     }
+    cout << fixed;
+    cout.precision(1);
     cout << sum/8;
     return 0;
 }
