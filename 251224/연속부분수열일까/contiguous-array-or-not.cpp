@@ -13,7 +13,7 @@ int main() {
     for(int i=0; i<n2; i++){
         cin >> arr2[i];
     }
-    for(int i=0; i<n1-n2; i++){
+    for(int i=0; i<=n1-n2; i++){
         int cnt=0;
         for(int j=0; j<n2; j++){
             if(arr1[j+i]==arr2[j]){
@@ -24,6 +24,7 @@ int main() {
             }
             if(cnt==n2){
                 a=true;
+                break;
             }
         }
     }
