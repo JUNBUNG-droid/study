@@ -3,8 +3,8 @@
 using namespace std;
 
 int N;
-int nums[1000];
-int count_arr[1000];
+int nums[1000]={};
+int count_arr[1000]={};
 
 int main() {
     cin >> N;
@@ -12,11 +12,11 @@ int main() {
         cin >> nums[i];
     }
     // Please write your code here.
-    for(int i=0; i<N; i++){
+    for(int i=0; i<1000; i++){
         count_arr[nums[i]]++;
     }
     int a=-1;
-    for(int i=N; i>=0; i--){
+    for(int i=999; i>=0; i--){
         if(count_arr[i]==1){
             a=i;
             break;
