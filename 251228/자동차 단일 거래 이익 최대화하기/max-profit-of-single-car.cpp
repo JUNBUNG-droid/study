@@ -2,9 +2,8 @@
 
 using namespace std;
 
-int n, idx=0;
+int n;
 int price[1000];
-int income[1000]={};
 
 int main() {
     cin >> n;
@@ -13,21 +12,19 @@ int main() {
     }
 
     // Please write your code here.
-    for (int i = 0; i < n-1; i++) {
-        for (int j = i+1; j < n; j++) {
-            if(price[j]-price[i]>0) {
-                income[idx]=price[j]-price[i];
-                idx++;
-            }
+    int min=price[0];
+    int profit=0;
+
+    for(int i=1; i<n; i++){
+        if(price[i]<min){
+            min=price[i];
+        }
+        else{
+            if(price[i]-min>profit)
+            profit=price[i]-min;
         }
     }
-    int max=0;
-    for (int i=0; i<1000; i++){
-        if(income[i]>income[max]){
-            max=i;
-        }
-    }   
-    cout << income[max];
-
+    cout << profit;
     return 0;
 }
+
