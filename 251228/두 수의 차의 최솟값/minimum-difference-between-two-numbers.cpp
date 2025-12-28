@@ -11,8 +11,8 @@ int main() {
     }
     int b=a[1]-a[0];
     for(int i=1; i<n-1; i++){
-        if(a[i+1]-a[1]<b){
-            b=a[i+1]-a[1];
+        if(a[i+1]-a[i]<b){
+            b=a[i+1]-a[i];
         }
     }
     cout << b;
