@@ -19,8 +19,13 @@ int main() {
         if(b>=m-1){
             b=m-1;
             if(n>m){
-                d++;
-                a++;
+                if(d>=n-m){
+                    d++;
+                }
+                else{
+                    d++;
+                    a++;
+                }
             }
             else{
                 d++;
