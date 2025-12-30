@@ -8,7 +8,7 @@ int main() {
     while(str.length()>1){
         int n;
         cin >> n;
-        if(n>str.length()){
+        if(n>str.length()-1){
             n=str.length()-1;
         }
         str.erase(n,1);
