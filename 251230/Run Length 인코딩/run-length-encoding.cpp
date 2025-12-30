@@ -21,7 +21,7 @@ int main() {
             cnt=0;
         }
     }
-    cout << str.length()+cnt+1 << "\n";
+    cout << str.length()+2 << "\n";
     cout << str << A[len-1] << cnt+1;
 
     return 0;
