@@ -12,17 +12,15 @@ int main() {
     int len=A.length();
     int cnt=0;
     string str="";
-    for(int i=0; i<len-1; i++){
-        if(A[i]==A[i+1]){
-            cnt++;
-        }
-        else{
-            str=str+A[i]+to_string(cnt+1);
+    for(int i=0; i<len; i++){
+        cnt++;
+        if(A[i]!=A[i+1]){
+            str=str+A[i]+to_string(cnt);
             cnt=0;
         }
     }
-    cout << str.length()+2 << "\n";
-    cout << str << A[len-1] << cnt+1;
+    cout << str.length() << "\n";
+    cout << str;
 
     return 0;
 }
