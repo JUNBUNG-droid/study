@@ -10,12 +10,12 @@ int a(int n){
     }
     if(n%2==0){
         n/=2;
-        a(n)+1;
+        return a(n)+1;
     }
     else{
         n*=3;
         n++;
-        a(n)+1;
+        return a(n)+1;
     }
     return a(n)+1;
 }
