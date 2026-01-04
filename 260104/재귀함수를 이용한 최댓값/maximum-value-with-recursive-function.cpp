@@ -5,17 +5,16 @@ using namespace std;
 int n;
 int arr[100];
 
-int maxarr(int arr[], int idx, int idx2){
+int maxarr(int arr[], int idx){
     if(idx==n-1){
-        return arr[0];
+        return arr[idx];
     }
-    if(arr[0]<arr[idx2]){
-        idx++;
-        return maxarr(arr+1, idx, idx2);
+    int m = maxarr(arr, idx+1);
+    if(arr[idx]>m){
+        return arr[idx];
     }
     else{
-        idx++;
-        return maxarr(arr, idx, idx2+1);
+        return m;
     }
 }
 
@@ -27,7 +26,7 @@ int main() {
     }
 
     // Please write your code here.
-    cout << maxarr(arr,0,1);
+    cout << maxarr(arr,0);
 
     return 0;
 }
