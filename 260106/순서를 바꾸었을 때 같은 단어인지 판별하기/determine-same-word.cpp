@@ -16,7 +16,15 @@ int main() {
     sort(word2.begin(),word2.end());
 
     bool match=true;
-    for(int i=0; i< word1.length(); i++){
+    int len=0;
+    if(word1.length()>word2.length()){
+        len=word1.length();
+    }
+    else{
+        len=word2.length();
+    }
+
+    for(int i=0; i<len; i++){
         if(word1[i]!=word2[i]){
             match=false;
         }
