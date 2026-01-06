@@ -18,15 +18,17 @@ int main() {
     // Please write your code here.
     int cnt=0;
     for (int i = 0; i < n; i++) {
+        if(str[i].length() < t.length()) continue;
+        
         bool match = true;
         for(int j=0; j<t.length(); j++){
             if(str[i][j]!=t[j]){
                 match = false;
+                break;
             }
         }
         if(match){
-            a[i]=str[i];
-            cnt++;
+            a[cnt++]=str[i];
         }
     }
     sort(a,a+cnt);
