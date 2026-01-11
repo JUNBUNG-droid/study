@@ -24,7 +24,10 @@ class Distance{
 };
 
 bool cmp(Distance a, Distance b){
-    return a.x+a.y<b.x+b.y;
+    if(a.x+a.y!=b.x+b.y){
+        return a.x+a.y<b.x+b.y;
+    }
+    return a.n<b.n;
 }
 
 Distance d[1000];
