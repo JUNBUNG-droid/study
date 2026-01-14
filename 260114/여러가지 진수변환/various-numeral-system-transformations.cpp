@@ -7,7 +7,7 @@ int N, B;
 void a(int n, int b){
     string a = "";
     while(true){
-        if(n<2){
+        if(n<b){
             a+=to_string(n);
             break;
         }
