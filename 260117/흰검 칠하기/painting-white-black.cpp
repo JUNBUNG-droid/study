@@ -7,11 +7,12 @@ char dir;
 
 class Info{
     public:
-        int idx;
+        int idxb, idxw;
         char color;
 
-    Info(int idx=0, char color=' '){
-        this->idx=idx;
+    Info(int idxb=0, int idxw=0, char color=' '){
+        this->idxb=idxb;
+        this->idxw=idxw;
         this->color=color;
     }
 };
@@ -26,8 +27,8 @@ int main() {
         cin >> a >> dir;
         if(dir=='R'){
             for(int j = 0; j<a; j++){
-                x[point].idx++;
-                if(x[point].idx>=4){
+                x[point].idxb++;
+                if(x[point].idxb>=2&&x[point].idxw>=2){
                     x[point].color='G';
                 }
                 else{
@@ -39,8 +40,8 @@ int main() {
         }
         else if(dir=='L'){
             for(int j = 0; j<a; j++){
-                x[point].idx++;
-                if(x[point].idx>=4){
+                x[point].idxw++;
+                if(x[point].idxb>=2&&x[point].idxw>=2){
                     x[point].color='G';
                 }
                 else{
