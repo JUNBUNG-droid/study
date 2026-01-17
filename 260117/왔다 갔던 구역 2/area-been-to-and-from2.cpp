@@ -13,32 +13,25 @@ int main() {
         int a;
         cin >> a >> dir;
         if(dir=='R'){
-            for(int j = 0; j<=a; j++){
-                x[point+j]++;
-            }
             for(int j = 0; j<a; j++){
+                x[point]++;
                 point++;
             }
         }
         else if(dir=='L'){
-            for(int j = 0; j<=a; j++){
-                x[point-j]++;
-            }
             for(int j = 0; j<a; j++){
                 point--;
+                x[point]++;
             }
         }
     }
 
-    int sum=0;
-    for(int i=0; i<299; i++){
-        if(x[i]<2&&x[i+1]>=2){
-                sum+=i+1;
-            }
-        if(x[i]>=2&&x[i+1]<2){
-                sum-=i;
-            }
+    int len=0;
+    for(int i=0; i<300; i++){
+        if(x[i]>=2){
+            len++;
+        }
     }
-    cout << abs(sum);
+    cout << len;
     return 0;
 }
