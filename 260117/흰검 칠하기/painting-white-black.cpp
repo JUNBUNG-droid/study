@@ -17,11 +17,11 @@ class Info{
     }
 };
 
-Info x[100000];
+Info x[150000];
 
 int main() {
     cin >> n;
-    int point = 50000;
+    int point = 75000;
     for (int i = 0; i < n; i++) {
         int a;
         cin >> a >> dir;
@@ -53,7 +53,7 @@ int main() {
         }
     }
     int cntb=0, cntw=0, cntg=0;
-    for(int i=0; i<100000; i++){
+    for(int i=0; i<150000; i++){
         if(x[i].color=='B'){
             cntb++;
         }
