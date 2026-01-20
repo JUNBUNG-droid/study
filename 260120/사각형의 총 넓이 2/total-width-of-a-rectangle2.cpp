@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -30,14 +31,15 @@ int main() {
             miny2=y2[i];
         }
     }
-    int min;
-    if(minx1>minx2){
+
+    int min=minx1;
+    if(min>minx2){
         min=minx2;
     }
-    if(minx2>miny1){
+    if(min>miny1){
         min=miny1;
     }
-    if(miny1>miny2){
+    if(min>miny2){
         min=miny2;
     }
 
