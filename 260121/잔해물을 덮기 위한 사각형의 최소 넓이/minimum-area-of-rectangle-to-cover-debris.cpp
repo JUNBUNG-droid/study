@@ -15,13 +15,13 @@ int main() {
         for(int j=x1[i]; j<x2[i]; j++){
             for(int k=y1[i]; k<y2[i]; k++){
                 if(i==0){
-                    area[j][k]=1;
+                    area[j+1000][k+1000]=1;
                 }
                 else if(i==1){
-                    if(area[j][k]==1){
+                    if(area[j+1000][k+1000]==1){
                         continue;
                     }
-                    area[j][k]=2;
+                    area[j+1000][k+1000]=2;
                 }
             }
         }
