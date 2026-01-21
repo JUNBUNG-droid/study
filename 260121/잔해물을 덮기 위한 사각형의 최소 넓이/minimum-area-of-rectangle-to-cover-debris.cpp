@@ -4,7 +4,7 @@ using namespace std;
 
 int x1[2], y1[2];
 int x2[2], y2[2];
-int area[2001][2001];
+int area[3000][3000];
 
 int main() {
     cin >> x1[0] >> y1[0] >> x2[0] >> y2[0];
@@ -23,28 +23,35 @@ int main() {
             }
         }
     }
-    int idx=0;
-    int x[2001]={}, y[2001]={};
-    for(int i=0; i<2001; i++){
-        for(int j=0; j<2001; j++){
+
+    int minx=0, maxx=0, miny=0, maxy=0;
+    bool first=true;
+    for(int i=0; i<3000; i++){
+        for(int j=0; j<3000; j++){
             if(area[i][j]==1){
-                x[idx]=i;
-                y[idx]=j;
-                idx++;
+                int x=i-1000;
+                int y=j-1000;
+                if(first){
+                    minx=x;
+                    miny=y;
+                    maxx=x;
+                    maxy=y;
+                    first=false;
+                }
+                else{
+                    minx=min(minx,x);
+                    maxx=max(maxx,x);
+                    miny=min(miny,y);
+                    maxy=max(maxy,y);
+                }
             }
         }
     }
-    int n = x[0], m = x[0], a = y[0], b = y[0];
-    for (int i = 1; i < idx; i++) {
-        n = min(n, x[i]);
-        m = max(m, x[i]);
-        a = min(a, y[i]);
-        b = max(b, y[i]);
-    }
-    if(idx==0){
+    if(first){
         cout << 0;
-        return 0;
     }
-    cout << (m-n+1)*(b-a+1);
+    else{
+        cout << (maxx - minx + 1) * (maxy - miny + 1);
+    }
     return 0;
 }
