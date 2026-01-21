@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <algorithm>
 using namespace std;
 
 int x1[2], y1[2];
@@ -18,22 +18,33 @@ int main() {
                     area[j+1000][k+1000]=1;
                 }
                 else if(i==1){
-                    if(area[j+1000][k+1000]==1){
-                        continue;
-                    }
                     area[j+1000][k+1000]=2;
                 }
             }
         }
     }
-    int cnt=0;
+    int idx=0;
+    int x[2001]={}, y[2001]={};
     for(int i=0; i<2001; i++){
         for(int j=0; j<2001; j++){
             if(area[i][j]==1){
-                cnt++;
+                x[idx]=i;
+                y[idx]=j;
+                idx++;
             }
         }
     }
-    cout << cnt;
+    int n = x[0], m = x[0], a = y[0], b = y[0];
+    for (int i = 1; i < idx; i++) {
+        n = min(n, x[i]);
+        m = max(m, x[i]);
+        a = min(a, y[i]);
+        b = max(b, y[i]);
+    }
+    if(idx==0){
+        cout << 0;
+        return 0;
+    }
+    cout << (m-n+1)*(b-a+1);
     return 0;
 }
