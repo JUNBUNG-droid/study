@@ -14,10 +14,10 @@ int main() {
         for(int j=x1[i]; j<x2[i]; j++){
             for(int k=y1[i]; k<y2[i]; k++){
                 if(i%2==0){
-                    area[j][k]=1;
+                    area[j+100][k+100]=1;
                 }
                 else{
-                    area[j][k]=2;
+                    area[j+100][k+100]=2;
                 }
             }
         }
