@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -12,18 +13,18 @@ int main() {
     }
 
     // Please write your code here.
-    int cnt=0, max=1;
+    int cnt=0, a=1;
     for (int i = 0; i < N; i++) {
         if(i==0||arr[i]==arr[i-1]){
             cnt++;
         }
         else{
-            if(cnt>max){
-                max=cnt;
+            if(cnt>a){
+                a=cnt;
             }
             cnt=1;
         }
     }
-    cout << max;
+    cout << max(a,cnt);
     return 0;
 }
