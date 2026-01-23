@@ -12,7 +12,7 @@ int main() {
     }
 
     // Please write your code here.
-    int cnt=0, max=0;
+    int cnt=0, max=1;
     for (int i = 0; i < N; i++) {
         if(i==0||arr[i]==arr[i-1]){
             cnt++;
