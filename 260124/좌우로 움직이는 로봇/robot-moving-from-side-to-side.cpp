@@ -4,8 +4,8 @@
 using namespace std;
 
 int n, m;
-int a[1000000]={};
-int b[1000000]={};
+int a[1000001]={};
+int b[1000001]={};
 
 int main() {
     cin >> n >> m;
@@ -41,7 +41,7 @@ int main() {
             bpoint++;
         }
     }
-    
+
     int start=min(apoint, bpoint);
     int goal=max(apoint, bpoint);
 
