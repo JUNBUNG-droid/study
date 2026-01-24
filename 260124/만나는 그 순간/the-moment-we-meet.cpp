@@ -8,8 +8,8 @@ int t[1000];
 char d2[1000];
 int t2[1000];
 
-int a[3000]={};
-int b[3000]={};
+int a[100000]={};
+int b[100000]={};
 
 int main() {
     cin >> n >> m;
