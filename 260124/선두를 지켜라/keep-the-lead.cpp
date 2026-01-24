@@ -30,19 +30,13 @@ int main() {
     }
     int cnt = 0;
     int prev = 0;
-    for(int i=1; i<a_time; i++){
-        if(a[i]-b[i]!=0){
-            prev=a[i]-b[i];
-            break;
-        }
-    }
 
     for(int i = 1; i < a_time; i++){
         int curr = a[i] - b[i];
 
         if(curr == 0) continue;
 
-        if(prev*curr<0){
+        if(prev != 0 && prev * curr < 0){
             cnt++;
         }
 
