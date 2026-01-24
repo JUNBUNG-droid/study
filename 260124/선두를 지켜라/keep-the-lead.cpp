@@ -36,7 +36,7 @@ int main() {
 
         if(curr == 0) continue;
 
-        if(prev != 0 && prev * curr < 0){
+        if(prev * curr < 0){
             cnt++;
         }
 
