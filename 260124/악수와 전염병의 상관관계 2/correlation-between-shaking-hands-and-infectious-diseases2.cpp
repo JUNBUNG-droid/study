@@ -4,7 +4,6 @@
 using namespace std;
 
 int N, K, P, T;
-int meet[251]={};
 
 class People{
     public:
@@ -53,17 +52,22 @@ int main() {
         }
     }
     for(int i=0; i<T; i++){
-        if(info[i].a==P&&info[i].b==P){
-            if(people[info[i].a].count==0){
+        if(people[info[i].a].infect==1&&people[info[i].b].infect==1){
+            if(people[info[i].a].count==0&&people[info[i].b].count==0){
+                continue;
+            }
+            else if(people[info[i].a].count==0){
                 people[info[i].b].count--; 
             }
             else if(people[info[i].b].count==0){
                 people[info[i].a].count--; 
             }
-            people[info[i].a].count--;
-            people[info[i].b].count--; 
+            else{
+                people[info[i].a].count--;
+                people[info[i].b].count--; 
+            }
         }
-        else if(info[i].a==P){
+        else if(people[info[i].a].infect==1){
             if(people[info[i].a].count==0){
                 continue;
             }
@@ -71,7 +75,7 @@ int main() {
             people[info[i].b].count=K;
             people[info[i].b].infect=1;            
         }
-        else if(info[i].b==P){
+        else if(people[info[i].b].infect==1){
             if(people[info[i].b].count==0){
                 continue;
             }
