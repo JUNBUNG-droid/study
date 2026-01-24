@@ -29,18 +29,21 @@ int main() {
         }
     }
     int cnt = 0;
-    int prev = 0;
+    int prev = 0;  
 
     for(int i = 1; i < a_time; i++){
-        int curr = a[i] - b[i];
+        int curr = 0;
+        
+        if(a[i] > b[i]) curr = 1;
+        else if(a[i] < b[i]) curr = -1;
 
-        if(curr == 0) continue;
-
-        if(prev * curr < 0){
+        if(prev != 0 && curr != 0 && prev != curr){
             cnt++;
         }
 
-        prev = curr;
+        if(curr != 0){
+            prev = curr;
+        }
     }
     cout << cnt;
     return 0;
