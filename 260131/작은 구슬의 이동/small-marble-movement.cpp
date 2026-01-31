@@ -7,7 +7,7 @@ int r, c;
 char d;
 
 int dx[4]={0,1,-1,0};
-int dy[4]={1,0,0,-1};
+int dy[4]={-1,0,0,1};
 
 bool isrange(int x, int y){
     return (0<x&&x<=n)&&(0<y&&y<=n);
