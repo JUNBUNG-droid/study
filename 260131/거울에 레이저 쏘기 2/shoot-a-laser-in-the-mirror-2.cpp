@@ -38,9 +38,9 @@ int main() {
 
     for(int i = 0; i < n; i++) {
         start[i] = Start(i, 0, 2);       
-        start[i + n] = Start(0, i, 1);   
+        start[i + n] = Start(n-1, i, 3);   
         start[i + 2*n] = Start(n-i-1, n-1, 0); 
-        start[i + 3*n] = Start(n-1, n-i-1, 3); 
+        start[i + 3*n] = Start(0, n-i-1, 1); 
     }
 
     int x = start[k - 1].x;
