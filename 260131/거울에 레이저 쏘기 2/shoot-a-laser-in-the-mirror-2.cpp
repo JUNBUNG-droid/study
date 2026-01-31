@@ -36,20 +36,18 @@ int main() {
 
     cin >> k;
 
-    int idxr = n - 1, idxc = n - 1;
-    for(int i = 0; i < 4 * n; i++) {
-        if(i < n) {
-            start[i] = Start(i, 0, 2);
-        }
-        else if(i < 2 * n) {
-            start[i] = Start(0, i - n, 1);
-        }
-        else if(i < 3 * n) {
-            start[i] = Start(idxc--, n - 1, 0);
-        }
-        else {
-            start[i] = Start(n - 1, idxr--, 3);
-        }
+    for(int i = 0; i < n; i++) {
+        start[i] = Start(i, 0, 2);       
+        start[i + n] = Start(0, i, 1);   
+        start[i + 2*n] = Start(n-i-1, n-1, 0); 
+        start[i + 3*n] = Start(n-1, n-i-1, 3); 
+    }
+
+    for(int i = 0; i < n; i++) {
+        start[i] = Start(i, 0, 2);       
+        start[i + n] = Start(0, i, 1);   
+        start[i + 2*n] = Start(n-i, n-1, 0);   
+        start[i + 3*n] = Start(n-1, n-i, 3);   
     }
 
     int x = start[k - 1].x;
