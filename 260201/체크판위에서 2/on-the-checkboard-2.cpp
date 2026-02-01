@@ -15,17 +15,22 @@ int main() {
 
     // Please write your code here.
     int cnt=0;
+
+    if(grid[0][0]==grid[R-1][C-1]){
+        cout << 0;
+        return 0;
+    }
+
     for(int i=1; i<R-2; i++){
-        for (int j=0; j<C-2; j++) {
-            if(grid[0][0]!=grid[i][j]){
-                for(int k=i+1; k<R-1; k++){
-                    for(int l=j+1; l<C-1; l++){
-                        if(grid[i][j]!=grid[k][l]&&grid[k][l]!=grid[R-1][C-1]){
-                            cnt++;
-                        }
-                    }
+        for (int j=1; j<C-2; j++) {
+        if (grid[i][j] == grid[0][0]) continue;
+            for(int k=i+1; k<R-1; k++){
+                for(int l=j+1; l<C-1; l++){
+                    if (grid[k][l] == grid[i][j]) continue;
+                    if (grid[k][l] == grid[R-1][C-1]) continue;
+                    cnt++;
                 }
-            } 
+            }
         }        
     }
     cout << cnt;
