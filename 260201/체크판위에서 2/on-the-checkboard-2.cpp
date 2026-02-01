@@ -17,11 +17,15 @@ int main() {
     int cnt=0;
     for(int i=1; i<R-2; i++){
         for (int j=0; j<C-2; j++) {
-            for(int k=i+1; k<R-1; k++){
-                for(int l=j+1; l<C-1; l++){
-                    if(grid[0][0]!=grid[i][j]&&grid[i][j]!=grid[k][l]) cnt++;
+            if(grid[0][0]!=grid[i][j]){
+                for(int k=i+1; k<R-1; k++){
+                    for(int l=j+1; l<C-1; l++){
+                        if(grid[i][j]!=grid[k][l]&&grid[k][l]!=grid[R-1][C-1]){
+                            cnt++;
+                        }
+                    }
                 }
-            }
+            } 
         }        
     }
     cout << cnt;
