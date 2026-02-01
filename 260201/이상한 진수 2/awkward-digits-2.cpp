@@ -8,6 +8,11 @@ int main() {
     cin >> a;
 
     // Please write your code here.
+    if(a.length()==1){
+        cout << 0;
+        return 0;
+    }
+    
     for(int i=0; i<a.length(); i++){
         if(a[i]=='0'){
             a[i]='1';
