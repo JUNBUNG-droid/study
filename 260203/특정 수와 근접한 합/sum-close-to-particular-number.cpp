@@ -1,7 +1,6 @@
 #include <iostream>
 #include <climits>
 #include <cmath>
-#include <algorithm>
 
 using namespace std;
 
@@ -14,18 +13,26 @@ int main() {
         cin >> arr[i];
     }
 
-    // Please write your code here.
-    int minus=INT_MAX;
-    for(int n1 = 0; n1 < N; n1++){
-        for(int n2 = n1 + 1; n2 < N; n2++){
-            int sum = 0;
-            for(int i = 0; i < N; i++){
-                if(i == n1 || i == n2) continue;
-                sum += arr[i];
-            }
-            minus = min(minus, abs(S - sum));
+    int n1 = 0, n2 = 1, minus = INT_MAX;
+
+    while (true) {
+        if (n1 == N - 1 && n2 == N )
+            break;
+
+        int sum = 0;
+        for (int i = 0; i < N; i++) {
+            if (i == n1 || i == n2) continue;
+            sum += arr[i];
         }
+
+        if (minus > abs(S - sum))
+            minus = abs(S - sum);
+
+        if (n2 == N - 1) {
+            n1++;
+            n2 = n1;
+        }
+        n2++;
     }
     cout << minus;
-    return 0;
 }
