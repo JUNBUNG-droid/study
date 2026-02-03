@@ -1,5 +1,4 @@
 #include <iostream>
-#include <climits>
 
 using namespace std;
 
@@ -21,7 +20,7 @@ int main() {
         arr2[i]+=arr[i];
     }
 
-    int max=INT_MIN;
+    int max=-1;
     int a, b, c;
     for(int i=0; i<n; i++){
         for(int j=i+1; j<n; j++){
