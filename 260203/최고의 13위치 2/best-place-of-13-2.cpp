@@ -33,8 +33,9 @@ int main() {
     else{
         for(int i=0; i<N; i++){
             for(int j=0; j<N-2; j++){
+                if(i==N-1&&j+5==N) break;
                 for(int k=0; k<N; k++){
-                    for(int l=N-3; l<N; l++){
+                    for(int l=3; l<N-2; l++){
                         int sum=0;
                         sum+=(arr[i][j]+arr[i][j+1]+arr[i][j+2]);
                         sum+=(arr[k][l]+arr[k][l+1]+arr[k][l+2]);
