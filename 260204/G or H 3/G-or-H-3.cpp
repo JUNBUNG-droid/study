@@ -17,7 +17,7 @@ int main() {
 
     // Please write your code here.
     int max_val=INT_MIN;
-    for(int i=1; i<=9993; i++){
+    for(int i=1; i<10000-K; i++){
         int score=0;
         for(int j=i; j<i+K+1; j++){
             if(c[j]=='G') score++;
