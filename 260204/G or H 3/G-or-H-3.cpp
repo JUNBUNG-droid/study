@@ -6,7 +6,7 @@ using namespace std;
 
 int N, K;
 int x[100];
-char c[10000];
+char c[10001];
 
 int main() {
     cin >> N >> K;
@@ -17,7 +17,7 @@ int main() {
 
     // Please write your code here.
     int max_val=INT_MIN;
-    for(int i=1; i<10000-K; i++){
+    for(int i=1; i<=10000-K; i++){
         int score=0;
         for(int j=i; j<i+K+1; j++){
             if(c[j]=='G') score++;
