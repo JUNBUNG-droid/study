@@ -26,7 +26,7 @@ int main() {
     for(int i=0; i<6; i++){
         for(int j=i+1; j<6; j++){
             for(int z=j+1; z<6; z++){
-                min_val=min(min_val,getabil(i,j,z));
+                min_val=min(min_val, getabil(abilities[i],abilities[j],abilities[z]));
             }
         }
     }
