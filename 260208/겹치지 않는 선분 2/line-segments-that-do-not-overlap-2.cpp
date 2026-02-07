@@ -38,10 +38,12 @@ int main() {
     // Please write your code here.
     int cnt=0;
     for(int i=0; i<N; i++){
+        bool ok = true;
         for(int j=0; j<N; j++){
             if(i==j) continue;
-            if(intersect(i,j)) cnt++;
+            if(intersect(i,j)) ok=false;
         }
+        if(ok) cnt++;
     }
     cout << cnt;
     return 0;
