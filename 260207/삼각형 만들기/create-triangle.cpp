@@ -16,23 +16,20 @@ int main() {
     }
 
     // Please write your code here.
-    int mx=0, my=0;
+    int best=0;
     for(int i=0; i<N; i++){
-        for(int j=i+1; j<N; j++){
-            for(int k=j+1; k<N; k++){
-
-                if(x[i]-x[j]==0) my=max(my, abs(y[i]-y[j]));
-                else if(y[i]-y[j]==0) mx=max(mx, abs(x[i]-x[j]));
-
-                if(x[i]-x[k]==0) my=max(my, abs(y[i]-y[k]));
-                else if(y[i]-y[k]==0) mx=max(mx, abs(x[i]-x[k]));
-
-                if(x[j]-x[k]==0) my=max(my, abs(y[j]-y[k]));
-                else if(y[j]-y[k]==0) mx=max(mx, abs(x[j]-x[k]));   
-
+        for(int j=0; j<N; j++){
+            if(i==j) continue;
+            for(int k=0; k<N; k++){
+                if(j==k||k==i) continue;
+                if(x[i]==x[j]&&y[i]==y[k]){
+                    int mx=abs(x[i]-x[k]);
+                    int my=abs(y[i]-y[j]);
+                    best=max(best,mx*my);
+                }
             }
         }
     }
-    cout << mx*my;
+    cout << best;
     return 0;
 }
