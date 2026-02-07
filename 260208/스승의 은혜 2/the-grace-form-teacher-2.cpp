@@ -14,14 +14,13 @@ int main() {
     }
 
     // Please write your code here.
+    sort(P,P+N);
     int max_cnt=0;
     for(int i=0; i<N; i++){
         int money=B, cnt=0;
         for(int j=0; j<N; j++){
             int cost=P[j];
-            if(i==j){
-                cost=P[j]/2;
-            }
+            if(i==j) cost=P[j]/2;
             if(money-cost<0) break;
             money-=cost;
             cnt++;
