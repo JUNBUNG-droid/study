@@ -33,7 +33,7 @@ int main() {
         for(int j=0; j<D; j++){
             if(cheese[i]==m[j]) ate[p[j]]=true;
         }
-        for(int j=0; j<N; j++){
+        for(int j=1; j<=N; j++){
             if(ate[j]) cnt++;
         }
         if(max<cnt) max=cnt;
