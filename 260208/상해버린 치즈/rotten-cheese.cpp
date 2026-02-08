@@ -28,8 +28,13 @@ int main() {
     int max=0;
     for(int i=1; i<=M; i++){
         int cnt=0;
+        // 같은 치즈를 또 먹을 수 있으므로 중복 방지
+        bool ate[50]={};
         for(int j=0; j<D; j++){
-            if(cheese[i]==m[j]) cnt++;
+            if(cheese[i]==m[j]) ate[p[j]]=true;
+        }
+        for(int j=0; j<N; j++){
+            if(ate[j]) cnt++;
         }
         if(max<cnt) max=cnt;
     }
