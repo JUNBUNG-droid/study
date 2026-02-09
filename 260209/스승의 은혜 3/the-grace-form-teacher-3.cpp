@@ -18,9 +18,9 @@ class Present{
 
 Present present[1000]={};
 
-//총합을 기준으로 오름차순 총합이 같을 시 가격을 기준으로 오름차순
+//총합을 기준으로 오름차순 총합이 같을 시 가격을 기준으로 내림차순
 bool cmp(Present a, Present b){
-    if(a.P+a.S==b.P+b.S) return a.P<=b.P;
+    if(a.P+a.S==b.P+b.S) return b.P<=a.P;
     return a.P+a.S<=b.P+b.S;
 }
 
@@ -37,14 +37,11 @@ int main() {
     //할인 물품 선택(i)
     int max_student=0;
     for (int i=0; i<N; i++) {
-        int money=B, cnt=0;
+        int money=B-(present[i].P/2+present[i].S), cnt=1;
         //돈이 0이 될때 까지 구매
         for(int j=0; j<N; j++){
-
             int cost=present[j].P;
-            if(j==i){
-                cost/=2;
-            }
+            if(j==i) continue;
             //더이상 구매 불가 시 break
             if(money-(cost+present[j].S)<0) break; 
             money-=(cost+present[j].S);
