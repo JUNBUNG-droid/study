@@ -10,11 +10,16 @@ int main() {
     // Please write your code here.
     int max_n=0, ans;
     for(int i=X; i<=Y; i++){
-        int a=i/10;
-        int b=i%10;
-        ans=a+b;
-        if(max_n<ans) max_n=ans;
+        int temp = i;
+        int sum = 0;
+
+        while(temp > 0) {
+            sum += temp % 10;  
+            temp /= 10;      
+        }
+        if(max_n < sum) max_n = sum;
     }
+    
     cout << max_n;
 
     return 0;
