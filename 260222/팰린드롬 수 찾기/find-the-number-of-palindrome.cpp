@@ -14,8 +14,8 @@ int main() {
         bool check = true;
         for(int j=0; j<str.length()/2; j++){
             if(str[j]!=str[str.length()-j-1]) check = false;
-            if(check) cnt++;
         }
+        if(check) cnt++;
     }
     cout << cnt;
     return 0;
