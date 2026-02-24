@@ -1,4 +1,5 @@
 #include <iostream>
+#include <climits>
 #include <cmath>
 
 using namespace std;
@@ -13,13 +14,13 @@ int main() {
         cin >> arr[i];
     }
 
-    int min_val=1000;
+    int min_val=INT_MAX;
     // *2 숫자 정하기
     for(int i=0; i<n; i++){
         arr[i]*=2;
         // 숫자 하나 제외
         for(int j=0; j<n; j++){
-            int current[4]={}, idx=0;
+            int current[n-1]={}, idx=0;
             for(int k=0; k<n; k++){
                 if(j==k) continue;
                 current[idx++] = arr[k];
