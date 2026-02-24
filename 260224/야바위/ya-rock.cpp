@@ -15,16 +15,16 @@ int main() {
     // Please write your code here.
     int max_val=0, idx=0;
     while(true){
-        if(idx==N) break;
+        if(idx==3) break;
         char d[3]={};
         int cnt=0;
         d[idx]='Y';
         for(int i=0; i<N; i++){
             int temp;
-            temp = d[b[i]];
-            d[b[i]] = d[a[i]];
-            d[a[i]] = temp;
-            if(d[c[i]]=='Y') cnt++;
+            temp = d[a[i]-1];
+            d[a[i]-1] = d[b[i]-1];
+            d[b[i]-1] = temp;
+            if(d[c[i]-1]=='Y') cnt++;
         }
         if(cnt>max_val) max_val=cnt;   
         idx++;   
