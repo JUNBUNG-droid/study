@@ -13,8 +13,8 @@ bool inrange(int x, int y){
 }
 
 bool cango(int x, int y){
+    if(!inrange(x, y)) return false;
     if(visited[x][y]||grid[x][y]==0) return false;
-    if(!inrange) return false;
     return true;
 }
 
