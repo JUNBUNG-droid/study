@@ -48,7 +48,7 @@ int main() {
 
     // Please write your code here.
     int h=0;
-    int max_vil=0;
+    int max_vil=-1;
     for(int k=1; k<101; k++){
         int vil=0;
         for(int i=0; i<N; i++){
