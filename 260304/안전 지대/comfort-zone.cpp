@@ -64,11 +64,10 @@ int main() {
                 } 
             }
         }   
-        if(max_vil<vil) max_vil=vil;
-        else{
-            h=k-1;
-            break;
-        }
+        if(max_vil<vil){
+            max_vil=vil;
+            h=k;
+        } 
         clean();
     }
     cout << h << " " << max_vil;
