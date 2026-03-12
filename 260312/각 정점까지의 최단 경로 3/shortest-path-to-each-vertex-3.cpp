@@ -7,9 +7,9 @@ using namespace std;
 
 class Node{
     public:
-        int vertax, dist;
-    Node(int vertax, int dist){
-        this->vertax=vertax;
+        int vertex, dist;
+    Node(int vertex, int dist){
+        this->vertex=vertex;
         this->dist=dist;
     }
     bool operator<(const Node& other) const{
@@ -41,7 +41,7 @@ void dijkstra(int start){
     pq.push(Node(start,0));
 
     while(!pq.empty()){
-        int curNode = pq.top().vertax;
+        int curNode = pq.top().vertex;
         int curDist = pq.top().dist;
         pq.pop();
         if(curDist>distArr[curNode]) continue;
@@ -67,7 +67,10 @@ int main() {
     // Please write your code here.
     dijkstra(1);
     for(int i=2; i<=n; i++){
-        cout << distArr[i] << "\n";
+        if(distArr[i] == INT_MAX)
+            cout << -1 << "\n";
+        else
+            cout << distArr[i] << "\n";
     }
     return 0;
 }
