@@ -6,7 +6,7 @@ using namespace std;
 int n;
 int x1, x2;
 int ans;
-int arr[1001] = {};
+int arr[2002] = {};
 vector<int> v;
 
 class Line{
@@ -24,20 +24,24 @@ class Line{
 Line line[15] = {};
 
 void check() {
-    int cnt = 1;
+    int cnt = 0;
     bool is_line = false;
-    for(int i=0; i<1001; i++) {
-        if(arr[i] != 0) is_line = true;
-        if(is_line && arr[i] == 0){
-            cnt += 1;
+
+    for(int i = 0; i < 2002; i++) {
+        if(arr[i] != 0 && !is_line) {
+            cnt++;
+            is_line = true;
+        }
+        else if(arr[i] == 0) {
             is_line = false;
-        } 
+        }
     }
-    if(ans < cnt) ans = cnt;
+
+    ans = max(ans, cnt);
 }
 
 void clean(){
-    for(int i = 0; i < 1001; i++){
+    for(int i = 0; i < 2002; i++){
         arr[i] = 0;
     }
 }
@@ -45,7 +49,7 @@ void clean(){
 void DFS(int a) {
     if(a == n) {
         for(int i = 0; i < v.size(); i++){
-            for(int j = line[v[i]].x; j <= line[v[i]].y; j++){
+            for(int j = line[v[i]].x * 2; j <= line[v[i]].y * 2; j++){
                 arr[j] += 1;
             }
         }
