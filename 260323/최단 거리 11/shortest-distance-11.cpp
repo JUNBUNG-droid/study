@@ -2,6 +2,7 @@
 #include <vector>
 #include <queue>
 #include <climits>
+#include <algorithm>
 
 using namespace std;
 
@@ -58,6 +59,10 @@ void dijkstra(int a) {
     }
 }
 
+bool cmp(Edge a, Edge b) {
+    return a.to < b.to;
+}
+
 int main() {
     cin >> n >> m;
 
@@ -69,6 +74,7 @@ int main() {
 
     for(int i = 1; i <= n; i++) {
         dist_arr[i] = LLONG_MAX;
+        sort(graph[i].begin(), graph[i].end(), cmp);
     }
 
     cin >> A >> B;
