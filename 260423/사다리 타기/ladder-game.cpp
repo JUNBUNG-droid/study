@@ -4,7 +4,7 @@
 using namespace std;
 
 int n, m;
-int line_c[11];                
+int line_c[15];                
 bool picked[11];            
 int origin_result[11];
 int ans = INT_MAX;
@@ -39,7 +39,7 @@ void solve(int idx, int cnt) {
 int main() {
     cin >> n >> m;
 
-    pair<int,int> tmp[11];    
+    pair<int,int> tmp[15];    
     for (int i = 0; i < m; i++) {
         int a, b;
         cin >> a >> b;
